@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #e7e2e2;
+        }
+
+        header {
+            background-color: #edeaea;
+            color: rgb(132, 13, 13);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .profile {
+            float: left;
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+
+        .skills {
+            float: right;
+            width: 60%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+
+        .contact {
+            float: right;
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media (max-width: 768px) {
+            .profile,
+            .skills,
+            .contact {
+                width: 100%;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Personal Portfolio</h1>
+    </header>
+
+    <div class="container">
+        <div class="profile">
+            <h2>About Me</h2>
+            <p>I am a web developer with a passion for coding. I specialize in HTML, CSS, and JavaScript.</p>
+            <p>Here are some technologies I've worked with:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+
+        <div class="skills">
+            <h2>My Skills</h2>
+            <div id="skills"></div>
+        </div>
+
+          <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: aiswaryaanu8102@email.com</p>
+            <p>Social Media:</p>
+            <a href="https://github.com/AiswaryaRamakrishnan">GitHub</a>
+        </div>
+
+        <div>
+            <img src="myself.png">
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <script>
+        const skills = ['HTML','CSS','JavaScript'];
+        const skillsList = document.getElementById('skills');
+
+        skills.forEach(skill => {
+            const skillElement = document.createElement('span');
+            skillElement.textContent = skill;
+            skillElement.classList.add('skill');
+            skillsList.appendChild(skillElement);
+        });
+    </script>
+</body>
+</html>
